@@ -128,9 +128,8 @@ class _HomePageState extends State<HomePage> {
         mainAxisSpacing: 10, // Espaçamento entre os gifs e a lateral
       ),
       itemCount: _getCount(snapshot.data!["data"]), // Qnt de itens a serem alocados no grid
-      itemBuilder: (context,index){ // Constrói o gris com os itens
+      itemBuilder: (context,index){ // Constrói o grid com os itens
         if( _search == null || index < snapshot.data!["data"].length){ // Caso o textfield esteja preenchido e o indice atual seja menor que a quantidade de gifs
-          print(snapshot.data!["data"].length);
           return GestureDetector(
             onLongPress: (){
               Share.share(snapshot.data!["data"][index]["images"]["fixed_height"]["url"]); // Função para compartilhar o gifs ao clicar e segurar
